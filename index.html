@@ -12,188 +12,72 @@
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
+ <style>
+  :root {
+    --primary-color: #0056b3;
+    --secondary-color: #6c757d;
+    --bg-light: #f8f9fa;
+    --text-dark: #212529;
+    --card-bg: #ffffff;
+  }
+
+  body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+  }
+
+  .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
+  .btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
+  .btn-outline-primary:hover,
+  .btn-primary:hover {
+    background-color: #00408a;
+    border-color: #00408a;
+  }
+
+  .card {
+    background-color: var(--card-bg);
+    border: 1px solid #dee2e6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .form-control, .form-select {
+    border-color: #ced4da;
+  }
+
+  footer {
+    background-color: #343a40;
+    color: white;
+    padding: 2rem 0;
+  }
+
+  footer a {
+    color: #adb5bd;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    color: white;
+  }
+
+  .badge {
+    background-color: var(--primary-color);
+  }
+</style>
+
   <style>
-    /* Industrial Color Palette */
-    :root {
-      --primary-color: #212529;
-      --accent-color: #ffb703;
-      /* industrial yellow */
-      --bg-color: #121212;
-      --card-bg: #1e1e1e;
-      --text-light: #e0e0e0;
-      --text-muted: #a0a0a0;
-      --shadow-color: rgba(255, 183, 3, 0.5);
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-light);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      min-height: 100vh;
-    }
-
-    header {
-      background-color: var(--primary-color);
-      padding: 1rem 0;
-      box-shadow: 0 4px 6px var(--shadow-color);
-    }
-
-    header img {
-      height: 45px;
-      filter: brightness(0) invert(1);
-    }
-
-    header h1 {
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      margin-left: 1rem;
-    }
-
-    /* Category Tabs */
-    .nav-pills .nav-link {
-      color: var(--text-muted);
-      border-radius: 30px;
-      padding: 0.5rem 1.5rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .nav-pills .nav-link:hover {
-      color: var(--accent-color);
-      background-color: transparent;
-      border: 1.5px solid var(--accent-color);
-    }
-
-    .nav-pills .nav-link.active {
-      background-color: var(--accent-color);
-      color: var(--primary-color);
-      font-weight: 700;
-      box-shadow: 0 0 8px var(--accent-color);
-    }
-
-    /* Service Cards */
-    .service-card .card {
-      background-color: var(--card-bg);
-      border: none;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(255, 183, 3, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .service-card .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px var(--shadow-color);
-    }
-
-    .service-card img {
-      height: 200px;
-      object-fit: cover;
-      border-bottom: 3px solid var(--accent-color);
-    }
-
-    .card-body {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      padding: 1.25rem 1.5rem;
-    }
-
-    .card-title {
-      font-weight: 700;
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-      color: var(--accent-color);
-      letter-spacing: 0.04em;
-    }
-
-    .card-text {
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    .btn-warning {
-      background-color: var(--accent-color);
-      border: none;
-      color: var(--primary-color);
-      font-weight: 700;
-      border-radius: 40px;
-      padding: 0.5rem 1.75rem;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-warning:hover,
-    .btn-warning:focus {
-      background-color: #ffa500cc;
-      color: var(--primary-color);
-      box-shadow: 0 0 10px var(--accent-color);
-    }
-
-    /* Modal */
-    .modal-content {
-      background-color: var(--card-bg);
-      color: var(--text-light);
-      border-radius: 12px;
-      border: none;
-      padding: 1.5rem;
-      box-shadow: 0 0 20px var(--shadow-color);
-    }
-
-    .modal-header {
-      border-bottom: 2px solid var(--accent-color);
-    }
-
-    .modal-title {
-      color: var(--accent-color);
-      font-weight: 700;
-      letter-spacing: 0.05em;
-    }
-
-    .form-label {
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .form-control {
-      background-color: #2b2b2b;
-      border: 1px solid #444;
-      color: var(--text-light);
-      transition: border-color 0.3s ease;
-    }
-
-    .form-control:focus {
-      background-color: #333;
-      border-color: var(--accent-color);
-      box-shadow: 0 0 8px var(--accent-color);
-      color: var(--text-light);
-    }
-
-    .form-text {
-      color: #777;
-      font-size: 0.8rem;
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 576px) {
-      .card-body {
-        padding: 1rem;
-      }
-
-      .btn-warning {
-        width: 100%;
-      }
-    }
-  </style>
-   <style>
     #logo {
       width: 45px;
       height: 45px;
@@ -214,12 +98,18 @@
       }
     }
   </style>
+<style>
+  html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+  }
+</style>
 
 </head>
 
 <body>
 
- 
+
   <!-- Navbar HTML -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
@@ -249,7 +139,7 @@
 
       <!-- Slide 1 -->
       <div class="carousel-item active">
-        <img src="images/t3.jpeg" class="d-block w-100 img-fluid rounded-4" alt="Slide 1"
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/027/109/080/small/large-truck-on-highway-photo.jpg" class="d-block w-100 img-fluid rounded-4" alt="Slide 1"
           style="height: 400px; object-fit: cover;">
         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100">
           <h2 class="text-shadow">Connect With Trusted Service Providers</h2>
@@ -270,7 +160,7 @@
 
       <!-- Slide 2 -->
       <div class="carousel-item">
-        <img src="images/t1.jpeg" class="d-block w-100 img-fluid rounded-4" alt="Slide 2"
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="d-block w-100 img-fluid rounded-4" alt="Slide 2"
           style="height: 400px; object-fit: cover;">
         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100">
           <h2 class="text-shadow">Find Trucks Near You Instantly</h2>
@@ -291,7 +181,7 @@
 
       <!-- Slide 3 -->
       <div class="carousel-item">
-        <img src="images/t2.jpeg" class="d-block w-100 img-fluid rounded-4" alt="Slide 3"
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/027/843/401/small/a-cargo-truck-with-a-container-is-seen-driving-across-a-bridge-while-a-semi-truck-with-a-cargo-trailer-follows-closely-behind-photo.jpg" class="d-block w-100 img-fluid rounded-4" alt="Slide 3"
           style="height: 400px; object-fit: cover;">
         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100">
           <h2 class="text-shadow">Book and Track Trucks Live</h2>
@@ -457,12 +347,50 @@
     <!-- ACE / Dost / Pickup -->
     <div class="col-md-4 mb-4 service-card" data-category="pickup">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/pickup.jpg" class="card-img-top" alt="ACE / Dost / Pickup" />
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/027/843/401/small/a-cargo-truck-with-a-container-is-seen-driving-across-a-bridge-while-a-semi-truck-with-a-cargo-trailer-follows-closely-behind-photo.jpg" class="card-img-top" alt="ACE / Dost / Pickup" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">ACE / Dost / Pickup</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>1.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Delhi</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
+          <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
+            data-bs-target="#bookingModal" data-truck="ACE / Dost / Pickup" data-capacity="1.5 Tons"
+            data-location="Delhi">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4 service-card" data-category="pickup">
+      <div class="card h-100 border-0 shadow-sm position-relative">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHgxFTDzqOBmeNu_eAXbdSQOrAFzhtSPImqm_LslknTM5kta6WV4m5mhvBh0qSVUb2lXo&usqp=CAU" class="card-img-top" alt="ACE / Dost / Pickup" />
+        <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-semibold">ACE / Dost / Pickup</h5>
+          <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>1.5 Tons</strong></p>
+          <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Delhi</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
+          <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
+            data-bs-target="#bookingModal" data-truck="ACE / Dost / Pickup" data-capacity="1.5 Tons"
+            data-location="Delhi">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4 service-card" data-category="pickup">
+      <div class="card h-100 border-0 shadow-sm position-relative">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK_J49Z49KClujkLapQyOlr_-IZmnsCQtGWGWNorNVeyuRimzPoi-ON0-ZQZGGz6iQqRs&usqp=CAU" class="card-img-top" alt="ACE / Dost / Pickup" />
+        <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-semibold">ACE / Dost / Pickup</h5>
+          <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>1.5 Tons</strong></p>
+          <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Delhi</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="ACE / Dost / Pickup" data-capacity="1.5 Tons"
             data-location="Delhi">
@@ -479,6 +407,8 @@
           <h5 class="card-title fw-semibold">ACE / Dost / Pickup</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>1.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Delhi</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="ACE / Dost / Pickup" data-capacity="1.5 Tons"
             data-location="Delhi">
@@ -489,12 +419,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="pickup">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/pickup.jpg" class="card-img-top" alt="ACE / Dost / Pickup" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBHcy_j7llaYCo8oyxjT3nFNSotThqaq4LOdcUKI4TiHbIF2cxfmPKKorB24h0yEYQDJ4&usqp=CAU" class="card-img-top" alt="ACE / Dost / Pickup" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">ACE / Dost / Pickup</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>1.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Delhi</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="ACE / Dost / Pickup" data-capacity="1.5 Tons"
             data-location="Delhi">
@@ -505,12 +437,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="pickup">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/pickup.jpg" class="card-img-top" alt="ACE / Dost / Pickup" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBHcy_j7llaYCo8oyxjT3nFNSotThqaq4LOdcUKI4TiHbIF2cxfmPKKorB24h0yEYQDJ4&usqp=CAU" class="card-img-top" alt="ACE / Dost / Pickup" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">ACE / Dost / Pickup</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>1.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Delhi</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="ACE / Dost / Pickup" data-capacity="1.5 Tons"
             data-location="Delhi">
@@ -521,28 +455,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="pickup">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/pickup.jpg" class="card-img-top" alt="ACE / Dost / Pickup" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHgxFTDzqOBmeNu_eAXbdSQOrAFzhtSPImqm_LslknTM5kta6WV4m5mhvBh0qSVUb2lXo&usqp=CAU" class="card-img-top" alt="ACE / Dost / Pickup" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">ACE / Dost / Pickup</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>1.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Delhi</strong></p>
-          <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
-            data-bs-target="#bookingModal" data-truck="ACE / Dost / Pickup" data-capacity="1.5 Tons"
-            data-location="Delhi">
-            <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4 service-card" data-category="pickup">
-      <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/pickup.jpg" class="card-img-top" alt="ACE / Dost / Pickup" />
-        <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title fw-semibold">ACE / Dost / Pickup</h5>
-          <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>1.5 Tons</strong></p>
-          <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Delhi</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="ACE / Dost / Pickup" data-capacity="1.5 Tons"
             data-location="Delhi">
@@ -555,12 +475,14 @@
     <!-- Eicher 14 ft -->
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher14.jpg" class="card-img-top" alt="Eicher 14 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBHcy_j7llaYCo8oyxjT3nFNSotThqaq4LOdcUKI4TiHbIF2cxfmPKKorB24h0yEYQDJ4&usqp=CAU" class="card-img-top" alt="Eicher 14 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 14 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>3.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Mumbai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 14 ft" data-capacity="3.5 Tons" data-location="Mumbai">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -570,12 +492,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher14.jpg" class="card-img-top" alt="Eicher 14 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHgxFTDzqOBmeNu_eAXbdSQOrAFzhtSPImqm_LslknTM5kta6WV4m5mhvBh0qSVUb2lXo&usqp=CAU" class="card-img-top" alt="Eicher 14 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 14 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>3.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Mumbai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 14 ft" data-capacity="3.5 Tons" data-location="Mumbai">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -585,12 +509,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher14.jpg" class="card-img-top" alt="Eicher 14 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 14 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 14 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>3.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Mumbai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 14 ft" data-capacity="3.5 Tons" data-location="Mumbai">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -600,12 +526,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher14.jpg" class="card-img-top" alt="Eicher 14 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 14 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 14 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>3.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Mumbai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 14 ft" data-capacity="3.5 Tons" data-location="Mumbai">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -615,12 +543,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher14.jpg" class="card-img-top" alt="Eicher 14 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 14 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 14 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>3.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Mumbai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 14 ft" data-capacity="3.5 Tons" data-location="Mumbai">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -630,12 +560,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher14.jpg" class="card-img-top" alt="Eicher 14 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 14 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 14 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>3.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Mumbai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 14 ft" data-capacity="3.5 Tons" data-location="Mumbai">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -645,12 +577,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher14.jpg" class="card-img-top" alt="Eicher 14 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 14 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 14 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>3.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Mumbai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 14 ft" data-capacity="3.5 Tons" data-location="Mumbai">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -662,12 +596,14 @@
     <!-- Eicher 17 ft (5 Tons) -->
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher17.jpg" class="card-img-top" alt="Eicher 17 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 17 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Bangalore</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 17 ft" data-capacity="5 Tons" data-location="Bangalore">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -677,12 +613,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher17.jpg" class="card-img-top" alt="Eicher 17 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 17 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Bangalore</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 17 ft" data-capacity="5 Tons" data-location="Bangalore">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -692,12 +630,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher17.jpg" class="card-img-top" alt="Eicher 17 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 17 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Bangalore</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 17 ft" data-capacity="5 Tons" data-location="Bangalore">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -707,12 +647,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher17.jpg" class="card-img-top" alt="Eicher 17 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 17 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Bangalore</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 17 ft" data-capacity="5 Tons" data-location="Bangalore">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -722,12 +664,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher17.jpg" class="card-img-top" alt="Eicher 17 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 17 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Bangalore</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 17 ft" data-capacity="5 Tons" data-location="Bangalore">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -737,12 +681,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher17.jpg" class="card-img-top" alt="Eicher 17 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 17 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Bangalore</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 17 ft" data-capacity="5 Tons" data-location="Bangalore">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -752,12 +698,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher17.jpg" class="card-img-top" alt="Eicher 17 ft" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 17 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Bangalore</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 17 ft" data-capacity="5 Tons" data-location="Bangalore">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -769,12 +717,14 @@
     <!-- 20 ft Container -->
     <div class="col-md-4 mb-4 service-card" data-category="container">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/container20ft.jpg" class="card-img-top" alt="20 ft Container" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="20 ft Container" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">20 ft Container</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>6.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Ahmedabad</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="20 ft Container" data-capacity="6.5 Tons"
             data-location="Ahmedabad">
@@ -785,12 +735,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="container">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/container20ft.jpg" class="card-img-top" alt="20 ft Container" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="20 ft Container" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">20 ft Container</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>6.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Ahmedabad</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="20 ft Container" data-capacity="6.5 Tons"
             data-location="Ahmedabad">
@@ -801,12 +753,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="container">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/container20ft.jpg" class="card-img-top" alt="20 ft Container" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="20 ft Container" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">20 ft Container</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>6.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Ahmedabad</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="20 ft Container" data-capacity="6.5 Tons"
             data-location="Ahmedabad">
@@ -817,12 +771,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="container">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/container20ft.jpg" class="card-img-top" alt="20 ft Container" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="20 ft Container" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">20 ft Container</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>6.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Ahmedabad</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="20 ft Container" data-capacity="6.5 Tons"
             data-location="Ahmedabad">
@@ -833,12 +789,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="container">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/container20ft.jpg" class="card-img-top" alt="20 ft Container" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="20 ft Container" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">20 ft Container</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>6.5 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Ahmedabad</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="20 ft Container" data-capacity="6.5 Tons"
             data-location="Ahmedabad">
@@ -847,15 +805,37 @@
         </div>
       </div>
     </div>
+    <div class="col-md-4 mb-4 service-card" data-category="container">
+      <div class="card h-100 border-0 shadow-sm position-relative">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="20 ft Container" />
+        <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-semibold">20 ft Container</h5>
+          <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>6.5 Tons</strong></p>
+          <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Ahmedabad</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
+          <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
+            data-bs-target="#bookingModal" data-truck="20 ft Container" data-capacity="6.5 Tons"
+            data-location="Ahmedabad">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+
     <!-- Eicher 17 ft (7 Tons) -->
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher17-7t.jpg" class="card-img-top" alt="Eicher 17 ft 7T" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft 7T" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 17 ft (7T)</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>7 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Hyderabad</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 17 ft (7T)" data-capacity="7 Tons"
             data-location="Hyderabad">
@@ -866,12 +846,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher17-7t.jpg" class="card-img-top" alt="Eicher 17 ft 7T" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft 7T" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 17 ft (7T)</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>7 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Hyderabad</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 17 ft (7T)" data-capacity="7 Tons"
             data-location="Hyderabad">
@@ -882,12 +864,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher17-7t.jpg" class="card-img-top" alt="Eicher 17 ft 7T" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft 7T" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 17 ft (7T)</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>7 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Hyderabad</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 17 ft (7T)" data-capacity="7 Tons"
             data-location="Hyderabad">
@@ -898,12 +882,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher17-7t.jpg" class="card-img-top" alt="Eicher 17 ft 7T" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft 7T" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 17 ft (7T)</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>7 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Hyderabad</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 17 ft (7T)" data-capacity="7 Tons"
             data-location="Hyderabad">
@@ -914,12 +900,14 @@
     </div>
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
       <div class="card h-100 border-0 shadow-sm position-relative">
-        <img src="images/eicher17-7t.jpg" class="card-img-top" alt="Eicher 17 ft 7T" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft 7T" />
         <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-semibold">Eicher 17 ft (7T)</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>7 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Hyderabad</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher 17 ft (7T)" data-capacity="7 Tons"
             data-location="Hyderabad">
@@ -928,6 +916,27 @@
         </div>
       </div>
     </div>
+    <div class="col-md-4 mb-4 service-card" data-category="eicher">
+      <div class="card h-100 border-0 shadow-sm position-relative">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKgwoZOfuaqb-wYEX4SqQ3dYjciCfLKd-eL_2ciC843iIGWWBQ5J5wKYt8e_h3RulQw&usqp=CAU" class="card-img-top" alt="Eicher 17 ft 7T" />
+        <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-semibold">Eicher 17 ft (7T)</h5>
+          <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>7 Tons</strong></p>
+          <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Hyderabad</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
+          <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
+            data-bs-target="#bookingModal" data-truck="Eicher 17 ft (7T)" data-capacity="7 Tons"
+            data-location="Hyderabad">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
 
     <!-- Eicher Pro 22 ft -->
     <div class="col-md-4 mb-4 service-card" data-category="eicher">
@@ -938,6 +947,8 @@
           <h5 class="card-title fw-semibold">Eicher Pro 22 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>10 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Chennai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher Pro 22 ft" data-capacity="10 Tons"
             data-location="Chennai">
@@ -954,6 +965,8 @@
           <h5 class="card-title fw-semibold">Eicher Pro 22 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>10 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Chennai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher Pro 22 ft" data-capacity="10 Tons"
             data-location="Chennai">
@@ -970,6 +983,8 @@
           <h5 class="card-title fw-semibold">Eicher Pro 22 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>10 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Chennai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher Pro 22 ft" data-capacity="10 Tons"
             data-location="Chennai">
@@ -986,6 +1001,8 @@
           <h5 class="card-title fw-semibold">Eicher Pro 22 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>10 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Chennai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher Pro 22 ft" data-capacity="10 Tons"
             data-location="Chennai">
@@ -1002,6 +1019,8 @@
           <h5 class="card-title fw-semibold">Eicher Pro 22 ft</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>10 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Chennai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Eicher Pro 22 ft" data-capacity="10 Tons"
             data-location="Chennai">
@@ -1010,6 +1029,44 @@
         </div>
       </div>
     </div>
+    <div class="col-md-4 mb-4 service-card" data-category="eicher">
+      <div class="card h-100 border-0 shadow-sm position-relative">
+        <img src="images/eicherpro22ft.jpg" class="card-img-top" alt="Eicher Pro 22 ft" />
+        <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-semibold">Eicher Pro 22 ft</h5>
+          <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>10 Tons</strong></p>
+          <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Chennai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
+          <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
+            data-bs-target="#bookingModal" data-truck="Eicher Pro 22 ft" data-capacity="10 Tons"
+            data-location="Chennai">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4 service-card" data-category="eicher">
+      <div class="card h-100 border-0 shadow-sm position-relative">
+        <img src="images/eicherpro22ft.jpg" class="card-img-top" alt="Eicher Pro 22 ft" />
+        <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-semibold">Eicher Pro 22 ft</h5>
+          <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>10 Tons</strong></p>
+          <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Chennai</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
+          <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
+            data-bs-target="#bookingModal" data-truck="Eicher Pro 22 ft" data-capacity="10 Tons"
+            data-location="Chennai">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+
 
     <!-- Lorry / Taurus -->
     <div class="col-md-4 mb-4 service-card" data-category="taurus">
@@ -1020,6 +1077,8 @@
           <h5 class="card-title fw-semibold">Lorry / Taurus</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>18 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Kolkata</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Lorry / Taurus" data-capacity="18 Tons" data-location="Kolkata">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -1035,6 +1094,8 @@
           <h5 class="card-title fw-semibold">Lorry / Taurus</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>18 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Kolkata</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Lorry / Taurus" data-capacity="18 Tons" data-location="Kolkata">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -1050,6 +1111,8 @@
           <h5 class="card-title fw-semibold">Lorry / Taurus</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>18 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Kolkata</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Lorry / Taurus" data-capacity="18 Tons" data-location="Kolkata">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -1065,6 +1128,8 @@
           <h5 class="card-title fw-semibold">Lorry / Taurus</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>18 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Kolkata</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Lorry / Taurus" data-capacity="18 Tons" data-location="Kolkata">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -1080,6 +1145,8 @@
           <h5 class="card-title fw-semibold">Lorry / Taurus</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>18 Tons</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Kolkata</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Lorry / Taurus" data-capacity="18 Tons" data-location="Kolkata">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -1087,6 +1154,9 @@
         </div>
       </div>
     </div>
+
+
+
 
     <!-- Open Trailer -->
     <div class="col-md-4 mb-4 service-card" data-category="trailer">
@@ -1097,6 +1167,8 @@
           <h5 class="card-title fw-semibold">20/32/40 ft Open Trailer</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>Variable</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Pan India</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Open Trailer" data-capacity="Variable" data-location="Pan India">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -1112,6 +1184,8 @@
           <h5 class="card-title fw-semibold">20/32/40 ft Open Trailer</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>Variable</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Pan India</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Open Trailer" data-capacity="Variable" data-location="Pan India">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -1127,6 +1201,8 @@
           <h5 class="card-title fw-semibold">20/32/40 ft Open Trailer</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>Variable</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Pan India</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Open Trailer" data-capacity="Variable" data-location="Pan India">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -1142,6 +1218,8 @@
           <h5 class="card-title fw-semibold">20/32/40 ft Open Trailer</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>Variable</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Pan India</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Open Trailer" data-capacity="Variable" data-location="Pan India">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -1157,6 +1235,8 @@
           <h5 class="card-title fw-semibold">20/32/40 ft Open Trailer</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>Variable</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Pan India</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Open Trailer" data-capacity="Variable" data-location="Pan India">
             <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
@@ -1164,6 +1244,25 @@
         </div>
       </div>
     </div>
+    <div class="col-md-4 mb-4 service-card" data-category="trailer">
+      <div class="card h-100 border-0 shadow-sm position-relative">
+        <img src="images/open-trailer.jpg" class="card-img-top" alt="Open Trailer" />
+        <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-semibold">20/32/40 ft Open Trailer</h5>
+          <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>Variable</strong></p>
+          <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>Pan India</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
+          <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
+            data-bs-target="#bookingModal" data-truck="Open Trailer" data-capacity="Variable" data-location="Pan India">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+
 
     <!-- Partloads / Parcel -->
     <div class="col-md-4 mb-4 service-card" data-category="parcel">
@@ -1174,6 +1273,8 @@
           <h5 class="card-title fw-semibold">Partloads & Parcel Service</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>Flexible</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>India</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Partloads & Parcel Service" data-capacity="Flexible"
             data-location="India">
@@ -1190,6 +1291,8 @@
           <h5 class="card-title fw-semibold">Partloads & Parcel Service</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>Flexible</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>India</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Partloads & Parcel Service" data-capacity="Flexible"
             data-location="India">
@@ -1198,6 +1301,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-md-4 mb-4 service-card" data-category="parcel">
       <div class="card h-100 border-0 shadow-sm position-relative">
         <img src="images/parcel.jpg" class="card-img-top" alt="Partloads and Parcel" />
@@ -1206,6 +1310,8 @@
           <h5 class="card-title fw-semibold">Partloads & Parcel Service</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>Flexible</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>India</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Partloads & Parcel Service" data-capacity="Flexible"
             data-location="India">
@@ -1214,6 +1320,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-md-4 mb-4 service-card" data-category="parcel">
       <div class="card h-100 border-0 shadow-sm position-relative">
         <img src="images/parcel.jpg" class="card-img-top" alt="Partloads and Parcel" />
@@ -1222,6 +1329,8 @@
           <h5 class="card-title fw-semibold">Partloads & Parcel Service</h5>
           <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>Flexible</strong></p>
           <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>India</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
           <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
             data-bs-target="#bookingModal" data-truck="Partloads & Parcel Service" data-capacity="Flexible"
             data-location="India">
@@ -1230,49 +1339,89 @@
         </div>
       </div>
     </div>
-  </div>
-  
-<!-- map -->
- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
-<script>function initMap() {
-  // Map centered on India (adjust as needed)
-  const mapCenter = { lat: 22.5937, lng: 78.9629 };
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 5,
-    center: mapCenter,
-  });
 
-  // Truck data extracted from service cards (You can expand or load dynamically)
-  const trucks = [
-    { title: "ACE / Dost / Pickup", category: "Pickup", available: true, location: "Delhi", lat: 28.7041, lng: 77.1025 },
-    { title: "Tata Ace Zip", category: "Pickup", available: false, location: "Noida", lat: 28.5355, lng: 77.3910 },
-    { title: "Mahindra Supro", category: "Pickup", available: true, location: "Jaipur", lat: 26.9124, lng: 75.7873 },
-    { title: "Bolero Maxi Truck", category: "Pickup", available: true, location: "Pune", lat: 18.5204, lng: 73.8567 },
-    { title: "Force Trump", category: "Pickup", available: false, location: "Bhopal", lat: 23.2599, lng: 77.4126 },
+    <div class="col-md-4 mb-4 service-card" data-category="parcel">
+      <div class="card h-100 border-0 shadow-sm position-relative">
+        <img src="images/parcel.jpg" class="card-img-top" alt="Partloads and Parcel" />
+        <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-semibold">Partloads & Parcel Service</h5>
+          <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>Flexible</strong></p>
+          <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>India</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
+          <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
+            data-bs-target="#bookingModal" data-truck="Partloads & Parcel Service" data-capacity="Flexible"
+            data-location="India">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
+          </button>
+        </div>
+      </div>
+    </div>
 
-    { title: "Eicher 14 ft", category: "Eicher", available: true, location: "Mumbai", lat: 19.076, lng: 72.8777 },
-    // Add other Eicher trucks with lat,lng...
+    <div class="col-md-4 mb-4 service-card" data-category="parcel">
+      <div class="card h-100 border-0 shadow-sm position-relative">
+        <img src="images/parcel.jpg" class="card-img-top" alt="Partloads and Parcel" />
+        <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-semibold">Partloads & Parcel Service</h5>
+          <p class="card-text text-muted"><i class="bi bi-speedometer2"></i> Capacity: <strong>Flexible</strong></p>
+          <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Location: <strong>India</strong></p>
+          <p class="card-text"><strong>Features:</strong> Covered body, GPS tracking</p>
+          <p class="card-text"><strong>Contact:</strong> +91-9876543211</p>
+          <button class="btn btn-dark mt-auto rounded-pill fw-bold" data-bs-toggle="modal"
+            data-bs-target="#bookingModal" data-truck="Partloads & Parcel Service" data-capacity="Flexible"
+            data-location="India">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Book Now
+          </button>
+        </div>
+      </div>
+    </div>
 
-    { title: "20ft Container", category: "Container", available: false, location: "Chennai", lat: 13.0827, lng: 80.2707 },
-    // Add other Container trucks...
 
-    { title: "40ft Trailer - All Side Open", category: "Trailer", available: true, location: "Hyderabad", lat: 17.385, lng: 78.4867 },
-    // Add other Trailer trucks...
 
-    { title: "Parcel / Partload Service", category: "Parcel", available: true, location: "Ahmedabad", lat: 23.0225, lng: 72.5714 },
-    // Add other Parcel trucks...
-  ];
 
-  trucks.forEach(truck => {
-    const marker = new google.maps.Marker({
-      position: { lat: truck.lat, lng: truck.lng },
-      map,
-      title: truck.title,
-      icon: truck.available ? 'http://maps.google.com/mapfiles/ms/icons/green-dot.png' : 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-    });
+    <!-- map -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    <script>function initMap() {
+        // Map centered on India (adjust as needed)
+        const mapCenter = { lat: 22.5937, lng: 78.9629 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 5,
+          center: mapCenter,
+        });
 
-    const infoWindow = new google.maps.InfoWindow({
-      content: `
+        // Truck data extracted from service cards (You can expand or load dynamically)
+        const trucks = [
+          { title: "ACE / Dost / Pickup", category: "Pickup", available: true, location: "Delhi", lat: 28.7041, lng: 77.1025 },
+          { title: "Tata Ace Zip", category: "Pickup", available: false, location: "Noida", lat: 28.5355, lng: 77.3910 },
+          { title: "Mahindra Supro", category: "Pickup", available: true, location: "Jaipur", lat: 26.9124, lng: 75.7873 },
+          { title: "Bolero Maxi Truck", category: "Pickup", available: true, location: "Pune", lat: 18.5204, lng: 73.8567 },
+          { title: "Force Trump", category: "Pickup", available: false, location: "Bhopal", lat: 23.2599, lng: 77.4126 },
+
+          { title: "Eicher 14 ft", category: "Eicher", available: true, location: "Mumbai", lat: 19.076, lng: 72.8777 },
+          // Add other Eicher trucks with lat,lng...
+
+          { title: "20ft Container", category: "Container", available: false, location: "Chennai", lat: 13.0827, lng: 80.2707 },
+          // Add other Container trucks...
+
+          { title: "40ft Trailer - All Side Open", category: "Trailer", available: true, location: "Hyderabad", lat: 17.385, lng: 78.4867 },
+          // Add other Trailer trucks...
+
+          { title: "Parcel / Partload Service", category: "Parcel", available: true, location: "Ahmedabad", lat: 23.0225, lng: 72.5714 },
+          // Add other Parcel trucks...
+        ];
+
+        trucks.forEach(truck => {
+          const marker = new google.maps.Marker({
+            position: { lat: truck.lat, lng: truck.lng },
+            map,
+            title: truck.title,
+            icon: truck.available ? 'http://maps.google.com/mapfiles/ms/icons/green-dot.png' : 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+          });
+
+          const infoWindow = new google.maps.InfoWindow({
+            content: `
         <div style="font-size: 14px;">
           <strong>${truck.title}</strong><br/>
           Category: ${truck.category}<br/>
@@ -1280,281 +1429,285 @@
           Availability: <span style="color:${truck.available ? 'green' : 'red'}">${truck.available ? 'Available' : 'Not Available'}</span>
         </div>
       `
-    });
+          });
 
-    marker.addListener("click", () => {
-      infoWindow.open(map, marker);
-    });
-  });
-}
-</script>
-
-  <script>
-    function filterCards(filter) {
-      const isAvailable = document.getElementById("availableOnlySwitch").checked;
-      document.querySelectorAll(".service-card").forEach(card => {
-        const matchesFilter = filter === "all" || card.dataset.category === filter;
-        const isCardAvailable = card.querySelector(".badge")?.textContent.trim() === "Available";
-        const shouldDisplay = matchesFilter && (!isAvailable || isCardAvailable);
-        card.style.display = shouldDisplay ? "block" : "none";
-      });
-    }
-
-    document.querySelectorAll(".filter-btn").forEach(btn => {
-      btn.addEventListener("click", function () {
-        const filter = this.dataset.filter;
-        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-        this.classList.add("active");
-        filterCards(filter);
-      });
-    });
-
-    document.getElementById("availableOnlySwitch").addEventListener("change", () => {
-      const activeBtn = document.querySelector(".filter-btn.active");
-      const currentFilter = activeBtn ? activeBtn.dataset.filter : "all";
-      filterCards(currentFilter);
-    });
-
-    // Initial filter on page load
-    document.querySelector(".filter-btn[data-filter='all']").click();
-  </script>
-
-
-
-  <!-- JS for form validation and toggling password visibility -->
-  <script>
-    (() => {
-      'use strict';
-
-      // Password toggles
-      const togglePassword = (btnId, inputId) => {
-        const btn = document.getElementById(btnId);
-        const input = document.getElementById(inputId);
-
-        btn.addEventListener('click', () => {
-          if (input.type === 'password') {
-            input.type = 'text';
-            btn.querySelector('i').classList.replace('bi-eye-fill', 'bi-eye-slash-fill');
-          } else {
-            input.type = 'password';
-            btn.querySelector('i').classList.replace('bi-eye-slash-fill', 'bi-eye-fill');
-          }
+          marker.addListener("click", () => {
+            infoWindow.open(map, marker);
+          });
         });
-      };
+      }
+    </script>
 
-      togglePassword('toggleLoginPassword', 'loginPassword');
-      togglePassword('toggleRegisterPassword', 'registerPassword');
+    <script>
+      function filterCards(filter) {
+        const isAvailable = document.getElementById("availableOnlySwitch").checked;
+        document.querySelectorAll(".service-card").forEach(card => {
+          const matchesFilter = filter === "all" || card.dataset.category === filter;
+          const isCardAvailable = card.querySelector(".badge")?.textContent.trim() === "Available";
+          const shouldDisplay = matchesFilter && (!isAvailable || isCardAvailable);
+          card.style.display = shouldDisplay ? "block" : "none";
+        });
+      }
 
-      // Bootstrap form validation
-      const forms = document.querySelectorAll('form');
-
-      forms.forEach(form => {
-        form.addEventListener('submit', e => {
-          e.preventDefault();
-          e.stopPropagation();
-
-          if (!form.checkValidity()) {
-            form.classList.add('was-validated');
-          } else {
-            // Here you can connect your backend API call.
-            // For demo, just show alert and reset form.
-            if (form.id === 'loginForm') {
-              alert('Login successful! (Demo)');
-            } else {
-              alert('Registration successful! (Demo)');
-            }
-            form.reset();
-            form.classList.remove('was-validated');
-
-            // Close modal after success (optional)
-            const authModal = bootstrap.Modal.getInstance(document.getElementById('authModal'));
-            authModal.hide();
-          }
-        }, false);
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+          const filter = this.dataset.filter;
+          document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+          this.classList.add("active");
+          filterCards(filter);
+        });
       });
-    })();
-  </script>
+
+      document.getElementById("availableOnlySwitch").addEventListener("change", () => {
+        const activeBtn = document.querySelector(".filter-btn.active");
+        const currentFilter = activeBtn ? activeBtn.dataset.filter : "all";
+        filterCards(currentFilter);
+      });
+
+      // Initial filter on page load
+      document.querySelector(".filter-btn[data-filter='all']").click();
+    </script>
+
+
+
+    <!-- JS for form validation and toggling password visibility -->
+    <script>
+      (() => {
+        'use strict';
+
+        // Password toggles
+        const togglePassword = (btnId, inputId) => {
+          const btn = document.getElementById(btnId);
+          const input = document.getElementById(inputId);
+
+          btn.addEventListener('click', () => {
+            if (input.type === 'password') {
+              input.type = 'text';
+              btn.querySelector('i').classList.replace('bi-eye-fill', 'bi-eye-slash-fill');
+            } else {
+              input.type = 'password';
+              btn.querySelector('i').classList.replace('bi-eye-slash-fill', 'bi-eye-fill');
+            }
+          });
+        };
+
+        togglePassword('toggleLoginPassword', 'loginPassword');
+        togglePassword('toggleRegisterPassword', 'registerPassword');
+
+        // Bootstrap form validation
+        const forms = document.querySelectorAll('form');
+
+        forms.forEach(form => {
+          form.addEventListener('submit', e => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (!form.checkValidity()) {
+              form.classList.add('was-validated');
+            } else {
+              // Here you can connect your backend API call.
+              // For demo, just show alert and reset form.
+              if (form.id === 'loginForm') {
+                alert('Login successful! (Demo)');
+              } else {
+                alert('Registration successful! (Demo)');
+              }
+              form.reset();
+              form.classList.remove('was-validated');
+
+              // Close modal after success (optional)
+              const authModal = bootstrap.Modal.getInstance(document.getElementById('authModal'));
+              authModal.hide();
+            }
+          }, false);
+        });
+      })();
+    </script>
 
 
 
 
-  <!-- Booking Modal -->
-  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <form id="bookingForm">
-          <div class="modal-header">
-            <h5 class="modal-title" id="bookingModalLabel"><i class="bi bi-truck"></i> Truck Booking</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <input type="hidden" id="truckName" name="truckName" />
-            <input type="hidden" id="truckCapacity" name="truckCapacity" />
-            <input type="hidden" id="truckLocation" name="truckLocation" />
-
-            <div class="mb-3">
-              <label for="userName" class="form-label">Your Name <span class="text-warning">*</span></label>
-              <input type="text" class="form-control" id="userName" name="userName" required
-                placeholder="Enter your full name" />
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <form id="bookingForm">
+            <div class="modal-header">
+              <h5 class="modal-title" id="bookingModalLabel"><i class="bi bi-truck"></i> Truck Booking</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                aria-label="Close"></button>
             </div>
-            <div class="mb-3">
-              <label for="userPhone" class="form-label">Phone Number <span class="text-warning">*</span></label>
-              <input type="tel" pattern="[0-9]{10}" class="form-control" id="userPhone" name="userPhone" required
-                placeholder="10-digit phone number" />
-              <div class="form-text">We will contact you to confirm the booking.</div>
+            <div class="modal-body">
+              <input type="hidden" id="truckName" name="truckName" />
+              <input type="hidden" id="truckCapacity" name="truckCapacity" />
+              <input type="hidden" id="truckLocation" name="truckLocation" />
+
+              <div class="mb-3">
+                <label for="userName" class="form-label">Your Name <span class="text-warning">*</span></label>
+                <input type="text" class="form-control" id="userName" name="userName" required
+                  placeholder="Enter your full name" />
+              </div>
+              <div class="mb-3">
+                <label for="userPhone" class="form-label">Phone Number <span class="text-warning">*</span></label>
+                <input type="tel" pattern="[0-9]{10}" class="form-control" id="userPhone" name="userPhone" required
+                  placeholder="10-digit phone number" />
+                <div class="form-text">We will contact you to confirm the booking.</div>
+              </div>
+              <div class="mb-3">
+                <label for="userMessage" class="form-label">Additional Message (Optional)</label>
+                <textarea class="form-control" id="userMessage" name="userMessage" rows="3"
+                  placeholder="Any specific requirements or info"></textarea>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="userMessage" class="form-label">Additional Message (Optional)</label>
-              <textarea class="form-control" id="userMessage" name="userMessage" rows="3"
-                placeholder="Any specific requirements or info"></textarea>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-warning fw-bold">
+                Submit Booking
+              </button>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-warning fw-bold">
-              Submit Booking
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-<!-- Footer Start -->
-<footer class="bg-dark text-light pt-5 pb-3 mt-5">
-  <div class="container">
-    <div class="row">
-
-      <!-- About Us -->
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold mb-3">About Us</h5>
-        <p style="text-align: justify;">
-          We are a nationwide truck service platform dedicated to connecting you with reliable trucks near your location. Whether it's small pickups or large trailers, we ensure availability, affordability, and safety for your transport needs.
-        </p>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="col-md-2 mb-4">
-        <h5 class="fw-bold mb-3">Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="/" class="text-light text-decoration-none">Home</a></li>
-          <li><a href="service.html" class="text-light text-decoration-none">Services</a></li>
-          <li><a href="about.html" class="text-light text-decoration-none">About Us</a></li>
-          <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
-          <li><a href="faq.html" class="text-light text-decoration-none">FAQ</a></li>
-        </ul>
-      </div>
-
-      <!-- Services -->
-      <div class="col-md-3 mb-4">
-        <h5 class="fw-bold mb-3">Truck Types</h5>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-light text-decoration-none">Pickup Trucks</a></li>
-          <li><a href="#" class="text-light text-decoration-none">Eicher Trucks</a></li>
-          <li><a href="#" class="text-light text-decoration-none">Containers</a></li>
-          <li><a href="#" class="text-light text-decoration-none">Trailers</a></li>
-          <li><a href="#" class="text-light text-decoration-none">Parcel Vans</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="col-md-3 mb-4">
-        <h5 class="fw-bold mb-3">Contact Us</h5>
-        <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i>123 Transport Lane, Delhi, India</p>
-        <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>+91 98765 43210</p>
-        <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i>support@truckservice.in</p>
-        <div class="mt-3">
-          <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-5"></i></a>
-          <a href="#" class="text-light me-3"><i class="bi bi-twitter-x fs-5"></i></a>
-          <a href="#" class="text-light me-3"><i class="bi bi-instagram fs-5"></i></a>
-          <a href="#" class="text-light"><i class="bi bi-linkedin fs-5"></i></a>
+          </form>
         </div>
       </div>
     </div>
+    <!-- Footer Start -->
+    <footer class="bg-dark text-light pt-5 pb-3 mt-5">
+      <div class="container">
+        <div class="row">
 
-    <hr class="bg-light" />
+          <!-- About Us -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold mb-3">About Us</h5>
+            <p style="text-align: justify;">
+              We are a nationwide truck service platform dedicated to connecting you with reliable trucks near your
+              location. Whether it's small pickups or large trailers, we ensure availability, affordability, and safety
+              for your transport needs.
+            </p>
+          </div>
 
-    <!-- Bottom Footer -->
-    <div class="row text-center">
-      <div class="col-12">
-        <p class="mb-0">&copy; 2025 TruckService.in. All Rights Reserved. | Designed & Developed by <strong>GearGo</strong></p>
+          <!-- Quick Links -->
+          <div class="col-md-2 mb-4">
+            <h5 class="fw-bold mb-3">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="/" class="text-light text-decoration-none">Home</a></li>
+              <li><a href="service.html" class="text-light text-decoration-none">Services</a></li>
+              <li><a href="about.html" class="text-light text-decoration-none">About Us</a></li>
+              <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+              <li><a href="faq.html" class="text-light text-decoration-none">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold mb-3">Truck Types</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-light text-decoration-none">Pickup Trucks</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Eicher Trucks</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Containers</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Trailers</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Parcel Vans</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold mb-3">Contact Us</h5>
+            <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i>123 Transport Lane, Delhi, India</p>
+            <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>+91 98765 43210</p>
+            <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i>support@truckservice.in</p>
+            <div class="mt-3">
+              <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-5"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-twitter-x fs-5"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-instagram fs-5"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-linkedin fs-5"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="bg-light" />
+
+        <!-- Bottom Footer -->
+        <div class="row text-center">
+          <div class="col-12">
+            <p class="mb-0">&copy; 2025 TruckService.in. All Rights Reserved. | Designed & Developed by
+              <strong>GearGo</strong></p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</footer>
-<!-- Footer End -->
+    </footer>
+    <!-- Footer End -->
 
-  <!-- Bootstrap JS Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-    // Filter services by category
-    const tabs = document.querySelectorAll("#categoryTabs button");
-    const cards = document.querySelectorAll(".service-card");
+    <script>
+      // Filter services by category
+      const tabs = document.querySelectorAll("#categoryTabs button");
+      const cards = document.querySelectorAll(".service-card");
 
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        // Remove active from all tabs
-        tabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
+      tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          // Remove active from all tabs
+          tabs.forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
 
-        const category = tab.getAttribute("data-category");
+          const category = tab.getAttribute("data-category");
 
-        cards.forEach(card => {
-          if (category === "all" || card.dataset.category === category) {
-            card.style.display = "block";
-          } else {
-            card.style.display = "none";
-          }
+          cards.forEach(card => {
+            if (category === "all" || card.dataset.category === category) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
         });
       });
-    });
 
-    // Prefill modal inputs on open
-    const bookingModal = document.getElementById("bookingModal");
-    bookingModal.addEventListener("show.bs.modal", (event) => {
-      const button = event.relatedTarget;
-      const truck = button.getAttribute("data-truck");
-      const capacity = button.getAttribute("data-capacity");
-      const location = button.getAttribute("data-location");
+      // Prefill modal inputs on open
+      const bookingModal = document.getElementById("bookingModal");
+      bookingModal.addEventListener("show.bs.modal", (event) => {
+        const button = event.relatedTarget;
+        const truck = button.getAttribute("data-truck");
+        const capacity = button.getAttribute("data-capacity");
+        const location = button.getAttribute("data-location");
 
-      document.getElementById("truckName").value = truck;
-      document.getElementById("truckCapacity").value = capacity;
-      document.getElementById("truckLocation").value = location;
+        document.getElementById("truckName").value = truck;
+        document.getElementById("truckCapacity").value = capacity;
+        document.getElementById("truckLocation").value = location;
 
-      // Clear user inputs
-      document.getElementById("userName").value = "";
-      document.getElementById("userPhone").value = "";
-      document.getElementById("userMessage").value = "";
-    });
+        // Clear user inputs
+        document.getElementById("userName").value = "";
+        document.getElementById("userPhone").value = "";
+        document.getElementById("userMessage").value = "";
+      });
 
-    // Booking form submit handler
-    document.getElementById("bookingForm").addEventListener("submit", (e) => {
-      e.preventDefault();
+      // Booking form submit handler
+      document.getElementById("bookingForm").addEventListener("submit", (e) => {
+        e.preventDefault();
 
-      const phoneInput = document.getElementById("userPhone");
-      if (!phoneInput.checkValidity()) {
-        alert("Please enter a valid 10-digit phone number.");
-        phoneInput.focus();
-        return;
-      }
+        const phoneInput = document.getElementById("userPhone");
+        if (!phoneInput.checkValidity()) {
+          alert("Please enter a valid 10-digit phone number.");
+          phoneInput.focus();
+          return;
+        }
 
-      const bookingData = {
-        truck: document.getElementById("truckName").value,
-        capacity: document.getElementById("truckCapacity").value,
-        location: document.getElementById("truckLocation").value,
-        userName: document.getElementById("userName").value.trim(),
-        userPhone: phoneInput.value.trim(),
-        userMessage: document.getElementById("userMessage").value.trim(),
-      };
+        const bookingData = {
+          truck: document.getElementById("truckName").value,
+          capacity: document.getElementById("truckCapacity").value,
+          location: document.getElementById("truckLocation").value,
+          userName: document.getElementById("userName").value.trim(),
+          userPhone: phoneInput.value.trim(),
+          userMessage: document.getElementById("userMessage").value.trim(),
+        };
 
-      alert(`Booking Submitted!\n\nTruck: ${bookingData.truck}\nName: ${bookingData.userName}\nPhone: ${bookingData.userPhone}`);
+        alert(`Booking Submitted!\n\nTruck: ${bookingData.truck}\nName: ${bookingData.userName}\nPhone: ${bookingData.userPhone}`);
 
-      // Close modal
-      const modal = bootstrap.Modal.getInstance(bookingModal);
-      modal.hide();
+        // Close modal
+        const modal = bootstrap.Modal.getInstance(bookingModal);
+        modal.hide();
 
-      // TODO: Connect to backend API to save booking
-    });
-  </script>
+        // TODO: Connect to backend API to save booking
+      });
+    </script>
 </body>
 
 </html>
